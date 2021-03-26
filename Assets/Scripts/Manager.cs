@@ -26,17 +26,23 @@ public class Manager : MonoBehaviour
         }
     }
 
+    private void quit() {
+        Application.Quit();
+    }
     void OnGUI()
     {
         GUI.skin = layout;
         GUI.Label(new Rect(Screen.width / 2 - 150 - 12, 20, 100, 100), "" + PlayerScore1);
         GUI.Label(new Rect(Screen.width / 2 + 150 + 12, 20, 100, 100), "" + PlayerScore2);
 
-        if (GUI.Button(new Rect(Screen.width / 2 - 60, 35, 120, 53), "RESTART"))
+        if (GUI.Button(new Rect(Screen.width / 2 - 60, 35, 100, 53), "RESTART"))
         {
             PlayerScore1 = 0;
             PlayerScore2 = 0;
             theBall.SendMessage("resetGame", 0.5f, SendMessageOptions.RequireReceiver);
+        }
+        if (GUI.Button(new Rect(Screen.width / 2 + 40, 35, 60, 53), "QUIT")) {
+            quit();
         }
 
         if (PlayerScore1 == 10)

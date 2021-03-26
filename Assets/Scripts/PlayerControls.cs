@@ -6,6 +6,7 @@ public class PlayerControls : MonoBehaviour
 {
     public KeyCode up = KeyCode.W;
     public KeyCode down = KeyCode.S;
+    public KeyCode forward = KeyCode.A;
     public float speed = 10.0f;
     public float maxY = 2.25f;
     private Rigidbody2D rb2d;
